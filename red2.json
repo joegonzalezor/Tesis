@@ -1,0 +1,30 @@
+{
+  "Ram":{
+        "Libre":200
+        },
+   "DD":{
+        "Libre":5000
+        },
+   "Bateria":{
+        "Libre":45
+        },
+   "APPs":{
+        "Total":29
+        },
+   "Procesador":{
+                "ponderacion":5,
+                "procesamiento":60
+                },
+   "internet":{
+        "Disponible":"Si"
+        },
+  "Perifericos":[
+    {"Nombre":"Microfono","Disponible":"No"},
+    {"Nombre":"Parlantes","Disponible":"Si"},
+    {"Nombre":"Camara","Disponible":"No"},
+    {"Nombre":"Pantalla","Disponible":"Si"},
+    {"Nombre":"Teclado","Disponible":"Si"},
+    {"Nombre":"Sensores","Disponible":"Si"}
+    ]
+}
+
