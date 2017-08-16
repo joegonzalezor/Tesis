@@ -35,6 +35,8 @@ def main():
         ScoringNode=float(File2.readline().rstrip())
     with open(filepath + "pids/SelfishnessInd.txt","r") as File3:
         SelfishnessIndicator=float(File3.readline().rstrip())
+    with open(filepath + "pids/NetNegPoint.txt","r") as File4:
+        NetNegPoint=float(File4.readline().rstrip())
 
     """try:
         client = socket.socket()
@@ -62,8 +64,8 @@ def main():
     while True:
         U1X1= ScoringNetwork*(SelfishnessIndicator-StepNegotiationNode)+ScoringNode
         U2X2= ScoringNode*(1-SelfishnessIndicator+StepNegotiationNode)+ScoringNetwork
-        U1Y1= 0.5*ScoringNetwork+ScoringNode
-        U2Y2= 0.5*ScoringNode+ScoringNetwork
+        U1Y1= (1-NetNegPoint+StepNegotiationNetwork)*ScoringNetwork+ScoringNode
+        U2Y2= (NetNegPoint-StepNegotiationNetwork)*ScoringNode+ScoringNetwork
 
         #For Zeuthen negotiation is necessary to stablish a status quo that means a point of minimal gain if a agreement is not reached
         U1X01= ScoringNode
@@ -101,6 +103,12 @@ def main():
             break
         elif r2>r1:
             StepNegotiationNode=StepNegotiationNode+0.1
+        elif r1<r2:
+            StepNegotiationNetwork= StepNegotiationNetwork+0.1
+        else:
+            StepNegotiationNode=StepNegotiationNode+0.1
+            StepNegotiationNetwork= StepNegotiationNetwork+0.1
+            
         
 
 
